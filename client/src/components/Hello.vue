@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-
+<button @click="getdata">b GET</button>
     <ul>
       <li>a </li>
       <li>a </li>

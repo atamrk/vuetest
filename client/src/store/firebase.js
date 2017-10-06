@@ -18,6 +18,6 @@ firebase.auth().onAuthStateChanged((user) => {
 })
 export default {
   database: firebase.database(),
-  auth: firebase.auth(),
-  db: firebase.firestore()
+  auth: firebase.auth()
+// db: firebase.firestore()
 }
