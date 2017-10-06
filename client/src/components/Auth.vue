@@ -14,19 +14,15 @@ export default {
   name: 'auth',
   mounted () {
     console.log(FB)
-
     console.log(firebaseui)
-
-    console.log(firebseui)
-
     var uiConfig = {
       signInSuccessUrl: '/success',
       signInOptions: [
-        FB.auth.GoogleAuthProvider.PROVIDER_ID,
-        FB.auth.EmailAuthProvider.PROVIDER_ID
+        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+        firebase.auth.EmailAuthProvider.PROVIDER_ID
       ]
     }
-    var ui = new firebaseui.auth.AuthUI(firebase.auth)
+    var ui = new firebaseui.auth.AuthUI(firebase.auth())
     ui.start('#firebaseui-auth-container', uiConfig)
   }
 }
