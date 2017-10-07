@@ -1,11 +1,11 @@
 <template>
   <div class="authSuccess">
-   <h1>authsuccess</h1>
+  
      <div> 
     <h1>Signup succeeded</h1> 
-    <button @click='logOut'>Log out</button> 
+    <button @click='logout'style= "background: red">Log out</button> 
     <hr> 
-    <img v-bind:src="photo" style=”height: 120px”> <br> 
+    <img v-bind:src="photo" style= "height: 120px"> <br> 
     <p>{{name}}</p> 
     <p>{{email}}</p> 
     <p>{{userId}}</p> 
@@ -17,15 +17,27 @@
 </template>
 
 <script>
+import firebase from 'firebase'
 export default {
-  name: 'auth-success',
+  name: 'success',
   data () {
     return {
       photo: '',
       userId: '',
       name: '',
-      email: '',
-      user: {}
+      email: ''
+    }
+  },
+  computed: {
+    user: function () {
+      console.log(' user')
+      return this.$store.getters.user
+    }
+  },
+  methods: {
+    logout () {
+      console.log('logging out')
+      firebase.auth().signOut()
     }
   }
 }

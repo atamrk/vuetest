@@ -5,25 +5,22 @@
   </div>
 </template>
 <script>
-import firebase from 'firebase'
-import FB from '@/store/firebase'
+import firebase from '@/store/firebase'
+// import FB from '@/store/firebase'
 // https://github.com/firebase/FirebaseUI-Web
-import firebaseui from 'firebaseui'
+// import firebaseui from 'firebaseui'
 
 export default {
   name: 'auth',
-  mounted () {
-    console.log(FB)
-    console.log(firebaseui)
-    var uiConfig = {
-      signInSuccessUrl: '/success',
-      signInOptions: [
-        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-        firebase.auth.EmailAuthProvider.PROVIDER_ID
-      ]
+  data () {
+    return {
+      load: false
     }
-    var ui = new firebaseui.auth.AuthUI(firebase.auth())
-    ui.start('#firebaseui-auth-container', uiConfig)
+  },
+  mounted () {
+    console.log('fire ui start', firebase.ui)
+    firebase.ui.start('#firebaseui-auth-container', firebase.uiConfig)
+    console.log('ui', firebase.ui)
   }
 }
 </script>
