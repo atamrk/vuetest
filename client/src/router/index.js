@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import Hello from '@/components/Hello'
-// import Hello1 from '@/components/Hello1'
-// import Hello2 from '@/components/Hello2'
+import Hello from '@/components/Hello'
+import Hello1 from '@/components/Hello1'
+import Hello2 from '@/components/Hello2'
 import Auth from '@/components/Auth'
 import AuthSuccess from '@/components/AuthSuccess'
 
@@ -18,6 +18,21 @@ export default new Router({
     path: '/auth',
     component: Auth,
     name: 'auth'
+  },
+  {
+    path: '/hello',
+    component: Hello,
+    name: 'hello'
+  },
+  {
+    path: '/hello1',
+    component: Hello1,
+    name: 'hello1'
+  },
+  {
+    path: '/hello2',
+    component: Hello2,
+    name: 'hello2'
   },
   {
     path: '/success',

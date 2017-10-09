@@ -1,23 +1,28 @@
 <template lang="html">
  <div class="auth">
    <h1>AUTH</h1>
+   {{date}}
+      <button @click='hello'style= "background: red">hello</button> 
      <div id="firebaseui-auth-container"></div>
   </div>
 </template>
 <script>
 import firebase from '@/store/firebase'
-// import FB from '@/store/firebase'
-// https://github.com/firebase/FirebaseUI-Web
-// import firebaseui from 'firebaseui'
-
+import moment from 'moment'
 export default {
   name: 'auth',
   data () {
     return {
-      load: false
+      date: moment(new Date()).format('YYYY年MM月DD日  (ddd)')
+    }
+  },
+  methods: {
+    hello () {
+      this.$router.push({name: 'hello'})
     }
   },
   mounted () {
+    moment.lang('ja')
     console.log('fire ui start', firebase.ui)
     firebase.ui.start('#firebaseui-auth-container', firebase.uiConfig)
     console.log('ui', firebase.ui)
