@@ -2,12 +2,7 @@ import firebase from 'firebase'
 import firebaseui from 'firebaseui'
 import 'firebase/firestore'
 const config = {
-  apiKey: 'AIzaSyCvnpLLode7y5fzTOMrytzQEAT3o4Q7ZJo',
-  authDomain: 'vue-fire-vuetify.firebaseapp.com',
-  databaseURL: 'https://vue-fire-vuetify.firebaseio.com',
-  projectId: 'vue-fire-vuetify',
-  storageBucket: 'vue-fire-vuetify.appspot.com',
-  messagingSenderId: '637092228110'
+ 
 }
 var uiConfig = {
   signInSuccessUrl: '/success',
